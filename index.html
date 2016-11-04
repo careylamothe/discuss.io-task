@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <title>Discuss.io</title>
+</head>
+
+<body>
+  <div class="container-fluid" style="background: #F6F6F6">
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid" style="height: 150px; padding: 40px 20px 50px 180px; background: white">
+          <div class="navbar-header">
+            <a class="navbar-left" href="#" ><img src="https://discussio.wpengine.com/wp-content/uploads/2016/02/logoDiscuss200px.png" alt="logo"/></a>
+          </div>
+        </div>
+      </nav>
+
+    <div id="add-edit" class="container" style="background: white;border: 1px solid #4E493B; padding-bottom: 50px">
+      <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+          <form class="form-horizontal">
+            <fieldset>
+              <legend style="padding: 40px; color: #64AED9"><span>Add a new question</span><span style="display: none">Edit question</span></legend>
+
+              <div class="form-group">
+                <label for="textArea" class="col-md-2 control-label">Textarea</label>
+                <div class="col-md-8">
+                  <textarea class="form-control" rows="3" id="new-text"></textarea>
+                  <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Checkbox
+                    </label>
+                    <label>
+                      <input type="checkbox"> Checkbox
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="select" class="col-lg-2 control-label">Selects</label>
+                <div class="row">
+                  <div id="selects" class="col-md-4">
+                    <select class="form-control" >
+                      <option>May select</option>
+                      <option>Must select</option>
+                      <option>Terminate if select</option>
+                    </select>
+                    <select class="form-control" >
+                      <option>May select</option>
+                      <option>Must select</option>
+                      <option>Terminate if select</option>
+                    </select>
+                    <select class="form-control" >
+                      <option>May select</option>
+                      <option>Must select</option>
+                      <option>Terminate if select</option>
+                    </select>
+                  </div>
+                  <div id="answers" class="form-group col-md-5">
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" placeholder="Answer" id="ans1">
+                    </div>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" placeholder="Answer" id="ans2">
+                    </div>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" placeholder="Answer" id="ans3">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button id="cancel" type="reset" class="btn btn-default">Cancel</button>
+                  <button id="add" type="submit" class="btn btn-primary">Save</button>
+                </div>
+                </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8 col-md-offset-2">
+          <div class="row">
+            <a id="new-question" href="#" class="btn btn-info" style="float: right">New Question</a>
+          </div>
+          <br>
+          <div class="row">
+            <ul id="questions-list" class="list-group" style="border: 1px solid #4E493B">
+              <li class="list-group-item editable">
+                <span class="badge pull-left col-xs-1">?</span>
+                  <span style="padding-left:10px">Cras justo odio</span>
+                <span><a href="#" class="edit col-xs-offset-7">Edit</a></span>
+                <span class="delete glyphicon glyphicon-trash pull-right" aria-hidden="true"><a href="#"></a></span>
+              </li>
+              <li class="list-group-item editable">
+                <span class="badge pull-left col-xs-1">?</span>
+                <span style="padding-left:10px">Dapibus ac facilisis</span>
+                <span><a href="#" class="edit col-xs-offset-7">Edit</a></span>
+                <span class="delete glyphicon glyphicon-trash pull-right" aria-hidden="true"><a href="#"></a></span>
+              </li>
+              <li class="list-group-item editable">
+                <span class="badge pull-left col-xs-1">?</span>
+                <span style="padding-left:10px">Morbi leo risus</span>
+                <span><a href="#" class="edit col-xs-offset-7">Edit</a></span>
+                <span class="delete glyphicon glyphicon-trash pull-right" aria-hidden="true"><a href="#"></a></span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="footer">
+        <div class="container">
+          <p class="text-muted credit">Example courtesy Carey LaMothe
+            <a href="https://www.linkedin.com/in/careylamothe">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn </a>
+              <a href="https://github.com/careylamothe">
+                <i class="fa fa-github" aria-hidden="true"></i> Github </a>
+              </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+
+
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
